@@ -7,6 +7,7 @@ class Car {
         int sponsorId;
         int pitStops;
         int speed;
+        int distance;
 
     public: 
         int getId() {
@@ -33,8 +34,8 @@ class Car {
             this->pitStops = pitStops; 
         };
 
-        double getDistance(int globalTime) {
-            return speed * globalTime;
+        double setDistance() {
+            distance += speed;
         };
         
         int getSpeed() {
@@ -44,10 +45,11 @@ class Car {
             this->speed = speed; 
         };
         
-    Car(int id, int sponsorId, int pitStops, int speed) {
+    Car (int id, int sponsorId, int pitStops, int speed) {
         this->id = id;
         this->sponsorId = sponsorId;
         this->pitStops = pitStops;
         this->speed = speed; 
+        distance = 0;
     }
 };
