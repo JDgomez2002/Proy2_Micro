@@ -1,32 +1,35 @@
-
-#include "car.cpp"
 #include <iostream>
 using namespace std;
 
-class Pit {
-    private:    
-        int id;
-        Car *cars;        
+/// @brief simulates a pit
+class Pit
+{
+private:
+    int id;
 
-    public: 
-        int getId() {
-            return id;
-        };
+public:
+    Car *cars;
 
-        void setId(int id) {            
-            this->id = id; 
-        };
+    /// @brief
+    /// @return id
+    int getId()
+    {
+        return id;
+    };
 
-        int getSponsorId() {
-            return cars;
-        };
+    /// @brief
+    /// @param id
+    void setId(int id)
+    {
+        this->id = id;
+    };
 
-        void setSponsorId(Car cars) {
-            this->cars = cars; 
-        };
-        
-    Pit (int id, Car cars) {
+    /// @brief
+    /// @param id, the identifier of the pit
+    /// @param cars, array of Car object - analogue: the affiliated runners
+    Pit(int id, Car *cars)
+    {
         this->id = id;
         this->cars = cars;
-    }
+    };
 };

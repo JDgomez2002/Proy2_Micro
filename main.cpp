@@ -1,29 +1,25 @@
 #include <stdio.h>
+
+#include <bits/stdc++.h>
+#include <vector>
+
+#include "model/data.cpp"
 #include "model/car.cpp"
+#include "model/pit.cpp"
+#include "view/format.h"
+using namespace std;
 
-public void *carOperations(void *arg) {
-    Car *car = (Car*) arg;
+Format format("---------------------------------------------------------");
 
-    while (car->getDistance(globalTime) <  globalDistance) {
-        
-    }
-    return nullptr;
-}
-
-public void *pitOperations(void *arg) {    
-    Sponsor *sponsor = (Sponsor*) arg;
-}
-
-public void *globalClock(void *arg) {
-    Car *car = (Car*) arg;
-    return nullptr;
-}
-
-
-int main()
+/// @brief
+/// @param argc
+/// @param argv
+/// @return
+int main(int argc, char *argv[])
 {
-    printf("Hello World");
-    Car car(1);
-    cout 
+    cout << format.divide({"Welcome to Race Simulator!", "This is our Microprocesadores second project, thanks for using the program!"});
+    data::programData input = data::request(format);
+    cout << input.carsAmount;
+    cout << format.divide({"See you soon!", "Team: Abner, Adrian, Samuel, Jose."});
     return 0;
 }
