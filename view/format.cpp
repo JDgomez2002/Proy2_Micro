@@ -1,18 +1,40 @@
-#include "format.h"
+#include <stdio.h>
+#include <bits/stdc++.h>
+#include <vector>
 
 using namespace std;
 
-string Format::divide(std::vector<string> param)
+/// @brief contains functions who take care of formatting the texts
+class Format
 {
-    string output = "";
-    for (auto i = param.begin(); i != param.end(); ++i)
-        output += divider + "\n" + *i + "\n";
-    return output;
-}
+private:
+    string divider;
 
-string Format::_int(string param)
-{
-    return "\nEnter the number of " + param + ":\n>> ";
-}
+public:
+    /// @brief generate a string separated by the divider defined for the class
+    /// @param param, vector of string
+    /// @param output, optional initial text
+    /// @return formatted string
+    string divide(std::vector<string> param)
+    {
+        string output = "";
+        for (auto i = param.begin(); i != param.end(); ++i)
+            output += divider + "\n" + *i + "\n";
+        return output;
+    };
 
-Format::Format(string divider) : divider(divider) {}
+    /// @brief generate a string that states a int prompt
+    /// @param param, element to insert between the format
+    /// @return
+    string _int(string param)
+    {
+        return "\nEnter the number of " + param + ":\n>> ";
+    };
+
+    /// @brief
+    /// @param divider, the divider for the texts that are used in many inside functions
+    Format(string divider)
+    {
+        this->divider = divider;
+    };
+};
