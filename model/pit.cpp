@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 /// @brief simulates a pit
@@ -6,10 +8,9 @@ class Pit
 {
 private:
     int id;
+    vector<Car> cars;
 
 public:
-    Car *cars;
-
     /// @brief
     /// @return id
     int getId()
@@ -26,8 +27,8 @@ public:
 
     /// @brief
     /// @param id, the identifier of the pit
-    /// @param cars, array of Car object - analogue: the affiliated runners
-    Pit(int id, Car *cars)
+    /// @param cars, vector of Car object - analogue: the affiliated runners
+    Pit(int id, vector<Car> cars)
     {
         this->id = id;
         this->cars = cars;

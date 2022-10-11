@@ -3,7 +3,12 @@ using namespace std;
 
 namespace calculus
 {
-    int *distributor(int arr[], int m, int n)
+    /// @brief Separate n into equal parts based on m
+    /// @param arr
+    /// @param m
+    /// @param n
+    /// @return return an array with the distribution
+    int *distribution(int arr[], int m, int n)
     {
         for (int i = 0; i < m; i++)
         {

@@ -10,6 +10,7 @@ private:
     int pitStops;
     int speed;
     int distance;
+    int globalDistance;
 
 public:
     /// @brief
@@ -55,8 +56,15 @@ public:
     };
 
     /// @brief
+    /// @param speed
+    int getDistance()
+    {
+        return distance;
+    };
+
+    /// @brief
     /// @return
-    double setDistance()
+    int setDistance()
     {
         distance += speed;
     };
@@ -75,17 +83,22 @@ public:
         this->speed = speed;
     };
 
+    int getGlobalDistance()
+    {
+        return globalDistance;
+    };
     /// @brief
     /// @param id, the identifier of the car - analogue: running number
     /// @param pitId, the identifier of the car pit
     /// @param pitStops, the amount of stops on the pits during the race
     /// @param speed, the speed of the car
-    Car(int id, int pitId, int pitStops, int speed)
+    Car(int id, int globalDistance)
     {
         this->id = id;
-        this->pitId = pitId;
-        this->pitStops = pitStops;
-        this->speed = speed;
-        distance = 0;
+        this->pitId = 0;
+        this->pitStops = 0;
+        this->speed = 0;
+        this->distance = 0;
+        this->globalDistance = globalDistance;
     }
 };
