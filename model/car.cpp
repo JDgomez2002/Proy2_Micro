@@ -69,6 +69,11 @@ public:
         distance += speed;
     };
 
+    int addDistance(int x)
+    {
+        distance += x;
+    };
+
     /// @brief
     /// @return
     int getSpeed()
